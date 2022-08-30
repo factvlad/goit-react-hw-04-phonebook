@@ -3,18 +3,19 @@ import s from "../Contacts.module.scss"
 
 const ContactList = ({ contacts, removeContacts }) => {
   const contactsList = contacts.map(({ id, name, number }) => (
-    <li className={ s.contacts } key={ id }>{ name } : { number }
+    <li className={ s.contacts }
+      key={ id }>
+      { name } : { number }
       <span
         className={ s.btnDel }
         type="button"
-        onClick={ () => removeContacts(id) }
+        onClick={ removeContacts }
         id={ id }
       >
         X
       </span>
     </li>
   ))
-
   return (
     <>
       <ul className={ s.contacts }>
